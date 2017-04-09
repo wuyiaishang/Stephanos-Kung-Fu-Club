@@ -1,0 +1,24 @@
+body{
+    background: white url("images/background.jpg");
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: cursive;
+}
+
+#body-container{
+    margin-left: 60px;
+}
+
+#table-view{
+    padding-left: 40px;
+    float: right;
+}
+
+#list-view{
+    padding-top: 80px;
+}

@@ -1,0 +1,33 @@
+{% extends "skf/base.html" %}
+{% block title %}
+    Parent Info
+{% endblock %}
+
+{% block body %}
+
+    <h2>Parent Info</h2>
+    <p>Parent information show as below:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Parent Name</th>
+            <th>Relation</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Find Children(Students)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for parent in parents %}
+            <tr>
+                <td>{{ parent.name }}</td>
+                <td>{{ parent.relation }}</td>
+                <td>{{ parent.mobile }}</td>
+                <td>{{ parent.email }}</td>
+                <td><a href="{% url 'skf:par_student' parent.id %}">Students</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

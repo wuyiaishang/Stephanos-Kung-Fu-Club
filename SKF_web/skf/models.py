@@ -34,6 +34,11 @@ TIME = (
     ('9:00 pm', '9:00 pm'),
 )
 
+LEVEL = (
+    ('Primary', 'Primary'),
+    ('Intermediate', 'Intermediate'),
+    ('Advanced', 'Advanced'),
+)
 
 # students table  source model
 class Student(models.Model):
@@ -78,7 +83,7 @@ class Payment(models.Model):
 # course table (many to many with Student)
 class Course(models.Model):
     students = models.ManyToManyField(Student)
-    level = models.CharField(max_length=500)
+    level = models.CharField(max_length=500, choices=LEVEL, default="Primary")
     week = models.CharField(max_length=500, choices=WEEK, default="Monday")
     time = models.CharField(max_length=500, choices=TIME, default="8:00 am")
 

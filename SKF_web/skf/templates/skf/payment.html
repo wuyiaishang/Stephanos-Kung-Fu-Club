@@ -1,0 +1,35 @@
+{% extends "skf/base.html" %}
+{% block title %}
+    Payment Info
+{% endblock %}
+
+{% block body %}
+
+    <h2>Payment Info</h2>
+    <p>Payment information show as below:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Money</th>
+            <th>Commodity</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Find Student</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for payment in payments %}
+            <tr>
+                <td>{{ payment.student.name }}</td>
+                <td>{{ payment.money }}</td>
+                <td>{{ payment.commodity }}</td>
+                <td>{{ payment.sdate }}</td>
+                <td>{{ payment.edate }}</td>
+                <td><a href="{% url 'skf:pay_student' payment.id %}">Students</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

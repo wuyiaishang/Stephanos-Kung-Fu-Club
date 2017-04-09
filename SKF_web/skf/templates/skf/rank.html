@@ -1,0 +1,31 @@
+{% extends "skf/base.html" %}
+{% block title %}
+    Rank Info
+{% endblock %}
+
+{% block body %}
+
+    <h2>Rank Info</h2>
+    <p>Rank information show as below:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Rank Name</th>
+            <th>Belt Color</th>
+            <th>Find Requirements</th>
+            <th>Find Students</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rank in ranks %}
+            <tr>
+                <td>{{ rank.name }}</td>
+                <td>{{ rank.bcolor }}</td>
+                <td><a href="{% url 'skf:ran_requirement' rank.name %}">Requirements</a></td>
+                <td><a href="{% url 'skf:ran_student' rank.name %}">Students</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

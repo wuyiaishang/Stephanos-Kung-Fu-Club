@@ -1,0 +1,45 @@
+{% extends "skf/base.html" %}
+{% block title %}
+    Student Info
+{% endblock %}
+
+{% block body %}
+
+    <h2>Student Info</h2>
+    <p>Student information show as below:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Number</th>
+            <th>Date of Birth</th>
+            <th>Date of Joining</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Find Parents</th>
+            <th>Find Courses</th>
+            <th>Find Rank</th>
+            <th>Find Payments</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.student_num }}</td>
+                <td>{{ student.dob }}</td>
+                <td>{{ student.djs }}</td>
+                <td>{{ student.mobile }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.address }}</td>
+                <td><a href="{% url 'skf:stu_parent' student.student_num %}">Parents</a></td>
+                <td><a href="{% url 'skf:stu_course' student.student_num %}">Courses</a></td>
+                <td><a href="{% url 'skf:stu_rank' student.student_num %}">Rank</a></td>
+                <td><a href="{% url 'skf:stu_payment' student.student_num %}">Payments</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

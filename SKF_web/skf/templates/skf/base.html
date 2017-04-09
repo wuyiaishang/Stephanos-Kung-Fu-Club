@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+
+    <!-- bookstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "skf/bootstrap.css" %}"/>
+    <!-- add the font -->
+    <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- input css files -->
+    <!-- css files below would overlap the bootstraps reference above -->
+    <link rel="stylesheet" type="text/css" href="{% static "skf/style.css" %}"/>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'skf:index' %}">Stephanos Kung Fu Club</a>
+        </div>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="{% url 'skf:index' %}">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp; Application
+                    </a>
+                </li>
+                <li class="">
+                    <a href="{% url 'skf:index' %}">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; About us
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;Log In</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;Sign up</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+<div class="container" id="body-container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to Stephanos Kung Fu Club</h1>
+            </br>
+            </br>
+            </br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="list-group  col-md-3" id="list-view">
+            <a href="{% url 'skf:student' %}" class="list-group-item">Student Info</a>
+            <a href="{% url 'skf:course' %}" class="list-group-item">Courses Info</a>
+            <a href="{% url 'skf:rank' %}" class="list-group-item">Rank Info</a>
+            <a href="{% url 'skf:parent' %}" class="list-group-item">Parent Info</a>
+            <a href="{% url 'skf:payment' %}" class="list-group-item">Payment Info</a>
+            <a href="{% url 'skf:rank_requirement' %}" class="list-group-item">Rank Requirement Info</a>
+            <a href="{% url 'skf:rank_record' %}" class="list-group-item">Student Rank Record</a>
+        </div>
+        <div class="col-md-8" id="table-view">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

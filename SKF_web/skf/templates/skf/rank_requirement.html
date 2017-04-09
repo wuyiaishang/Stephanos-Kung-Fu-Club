@@ -1,0 +1,29 @@
+{% extends "skf/base.html" %}
+{% block title %}
+    Rank Requirement Info
+{% endblock %}
+
+{% block body %}
+
+    <h2>Rank Requirement Info</h2>
+    <p>Rank Requirement information show as below:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Rank Name</th>
+            <th>Requirement</th>
+            <th>Find Rank</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rank_requirement in rank_requirements %}
+            <tr>
+                <td>{{ rank_requirement.rank.name }}</td>
+                <td>{{ rank_requirement.content }}</td>
+                <td><a href="{% url 'skf:rreq_rank' rank_requirement.id %}">Rank</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

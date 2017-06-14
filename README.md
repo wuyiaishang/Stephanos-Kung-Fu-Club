@@ -39,12 +39,18 @@ Rank Requirement
  - requirement content for ranks
  - show relative rank (by link)
 
-# Models and their Relationships
-- one2many
-- many2many
-- extra many2many
 
 # Techniques
 Django, Sqlite, Html, CSS, Bootstrap
 
 # How to achieve
+- MTV(MVC) structure implement in the whole project. M(Model), T(Template) and V(View)
+- model, using one2one, many2one and many2many to describe the relation along models
+- regular expression identify the URL's parameter, then pass them to view(controller)
+- view receive parameters, create Queryset to search in DB.
+- view get result from DB and deliver it to template
+- template uses block syntax to refresh web pages partly
+- CSS and Bootstrap modify the html files
+
+- 
+

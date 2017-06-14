@@ -52,5 +52,3 @@ Django, Sqlite, Html, CSS, Bootstrap
 - template uses block syntax to refresh web pages partly
 - CSS and Bootstrap modify the html files
 
-- 
-

@@ -3,7 +3,7 @@ Stephanos-Kung-Fu-Club(Information Management System)
 
 # Business Logic
 - This is a kind of information management system.
-- It storing student info, students' parents info, course info, payment info, rank info, rank record and rank requirement info
+- store student info, students' parents info, course info, payment info, rank info, rank record and rank requirement info
 - partly refresh the page to show differnet info.
 
 Student

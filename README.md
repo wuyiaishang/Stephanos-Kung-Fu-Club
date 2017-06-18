@@ -49,6 +49,5 @@ Django, Sqlite, Html, CSS, Bootstrap
 - regular expression identify the URL's parameter, then pass them to view(controller)
 - view receive parameters, create Queryset to search in DB.
 - view get result from DB and deliver it to template
-- template uses block syntax to refresh web pages partly
 - CSS and Bootstrap modify the html files
 
